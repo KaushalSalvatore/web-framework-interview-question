@@ -172,13 +172,84 @@ Pagination
 Field limiting
 ```
 
-#### Q-19 Need Background Processing ?
+#### Q-19 Need Background Processing and API Documentation ?
 ```bash
+Background Processing:
 Use Celery.
-```
 
-#### Q-20 Need API Documentation ?
-```bash
+API Documentation:
 Use Swagger / OpenAPI.
 drf-yasg
+```
+
+#### Q-20 monolithic architecture and a microservices architecture ?
+```bash
+In a monolithic system, the entire application is built as a single unit.
+
+Structure
+All components are tightly connected:
+User interface
+Business logic
+Database access
+Authentication
+APIs
+
+Everything runs in one codebase and is deployed together.
+
+Example
+Think of a traditional e-commerce app:
+Product catalog
+Cart
+Payments
+User accounts
+
+All of these are part of one large application.
+
+Advantages
+
+Simpler to develop at the beginning
+Easier to test locally
+Single deployment process
+Lower operational complexity
+
+Disadvantages
+
+Hard to scale specific parts (must scale whole app)
+Slower development as the app grows
+One bug can affect the entire system
+Large codebase becomes difficult to maintain
+
+
+In microservices, the application is split into small, independent services.
+
+Each service:
+
+Has its own responsibility
+Can be deployed independently
+Often has its own database
+Communicates with others via APIs
+Example (same e-commerce app)
+
+Product Service
+Cart Service
+Payment Service
+User Service
+
+Each runs separately and talks to others via HTTP or messaging.
+
+Advantages
+
+Independent scaling (scale only what’s needed)
+Faster team development
+Technology flexibility (different languages per service)
+Fault isolation (one service fails, others continue)
+
+Disadvantages
+
+More complex infrastructure
+Harder debugging (distributed system)
+Network latency
+DevOps requirements increase
+
+
 ```
